@@ -1,0 +1,37 @@
+@import '../../styles.scss';
+
+.main{
+    height: 100vh;
+    width: 100%;
+    padding: 5rem;
+    background: $background-color;
+    color: $primary-text-color;
+    display: grid;
+    grid-template-columns:  1fr ;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+    "input-form"
+    "main";
+    gap: 3rem;
+}
+
+.input-form{
+    grid-area: input-form;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-body{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.input-field{
+    width: 400px;
+}

@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+
+.top-nav{
+    background-color: $primary-color;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    color: $primary-text-color;
+    font-size: $large-text-size;
+    p{
+        margin: 0;
+    }
+}
