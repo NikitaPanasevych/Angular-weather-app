@@ -4,11 +4,9 @@
     background-color: $primary-color;
     text-align: center;
     width: 100%;
-    left: 0;
-    right: 0;
     height: 40px;
     line-height: 40px;
     font-size: 14px;
-    color: #666;
+    color: $primary-text-color;
     z-index: 999;
 }

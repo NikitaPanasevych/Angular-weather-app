@@ -15,15 +15,19 @@ export class MainComponent implements OnInit {
     private snackbar: MatSnackBar
   ) {}
 
-  items = [
-    { id: 1, title: 'Item 1', description: 'Description 1' },
-    { id: 2, title: 'Item 2', description: 'Description 2' },
-    { id: 3, title: 'Item 3', description: 'Description 3' },
-  ];
-
   @ViewChild('cityForm') cityForm?: NgForm;
 
   weatherData: Weather[] = [];
+
+  weatherIconUrl: string = 'http://openweathermap.org/img/wn/';
+
+  getWeatherIconUrl(icon: string): string {
+    return this.weatherIconUrl + icon + '@2x.png';
+  }
+
+  roundTemperature(value: number): number {
+    return Math.round(value);
+  }
 
   ngOnInit(): void {
     this.weatherService.getWeather('Warsaw').subscribe(
@@ -36,19 +40,39 @@ export class MainComponent implements OnInit {
   }
 
   getWeatherData() {
-    this.weatherService
-      .getWeather(this.cityForm?.value.city)
-      .subscribe((data) => {
-        if (this.weatherData?.some((item) => item.name === data.name)) {
-          this.weatherData?.push(data);
-          //snackbar success
-          this.snackbar.open('Added', undefined, {
+    if (this.cityForm?.value.city != '') {
+      this.weatherService.getWeather(this.cityForm?.value.city).subscribe(
+        (data) => {
+          if (this.weatherData.some((e) => e.name == data.name)) {
+            this.snackbar.open('City is already in your list', 'Close', {
+              duration: 2000,
+            });
+          } else {
+            this.weatherData?.push(data);
+            this.snackbar.open('City added', 'Close', {
+              duration: 2000,
+            });
+            console.log(this.weatherData);
+          }
+        },
+        (error) => {
+          this.snackbar.open('City not found', 'Close', {
             duration: 2000,
           });
-          console.log(this.weatherData);
-        } else {
-          console.log('City already added');
         }
+      );
+    } else {
+      this.snackbar.open('Type a city', 'Close', {
+        duration: 2000,
       });
+    }
+  }
+
+  receiveDeleteCity($event: string) {
+    let deletedCity: string = $event;
+    this.weatherData = this.weatherData.filter((e) => e.name != deletedCity);
+    this.snackbar.open('City deleted', 'Close', {
+      duration: 2000,
+    });
   }
 }

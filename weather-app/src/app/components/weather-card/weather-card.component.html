@@ -1,5 +1,11 @@
 <div class="weather-card">
-    <h3>{{ item }}</h3>
-    <!-- Add more content for the weather card -->
-  </div>
-
+  <h3 class="weather-card__city">{{ cityName }}</h3>
+  <p class="weather-card__temp">temperature: {{ temperature }}°C</p>
+  <p class="weather-card__temp">feels like: {{ temperatureFeelsLike }}°C</p>
+  <img class="weather-card__icon" src="{{ icon }}" alt="Weather Icon" />
+  <p class="weather-card__description">{{ description }}</p>
+  <button (click)="delete()" mat-button class="weather-card__delete-button">
+    Delete
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
