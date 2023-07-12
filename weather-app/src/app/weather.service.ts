@@ -12,6 +12,6 @@ export class WeatherService {
 
   getWeather(city: string): Observable<Weather> {
     const url = `${environment.baseApiUrl}?q=${city}&appid=${environment.apiKey}&units=metric`;
-    return this.http.get<any>(url);
+    return this.http.get<Weather>(url);
   }
 }
