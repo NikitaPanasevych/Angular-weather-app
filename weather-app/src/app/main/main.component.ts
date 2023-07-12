@@ -52,7 +52,6 @@ export class MainComponent implements OnInit {
             this.snackbar.open('City added', 'Close', {
               duration: 2000,
             });
-            console.log(this.weatherData);
           }
         },
         (error) => {

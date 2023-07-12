@@ -53,9 +53,10 @@ import { RouterLink } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { CityWeatherPageComponent } from './city-weather-page/city-weather-page.component';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, MainComponent, WeatherCardComponent, FooterComponent],
+  declarations: [AppComponent, TopNavComponent, MainComponent, WeatherCardComponent, FooterComponent, CityWeatherPageComponent],
   imports: [
     RouterLink,
     FormsModule,

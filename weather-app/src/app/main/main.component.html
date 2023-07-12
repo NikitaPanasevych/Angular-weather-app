@@ -18,6 +18,7 @@
         [description]="city.weather[0].description"
         [icon]="getWeatherIconUrl(city.weather[0].icon)"
         (deleteCity)="receiveDeleteCity($event)"
+        [routerLink]="['/', city.name]"
       ></app-weather-card>
     </div>
   </div>
