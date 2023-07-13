@@ -13,10 +13,10 @@
       <app-weather-card
         *ngFor="let city of weatherData"
         [cityName]="city.name"
-        [temperature]="roundTemperature(city.main.temp)"
-        [temperatureFeelsLike]="roundTemperature(city.main.feels_like)"
+        [temperature]="city.main.temp"
+        [temperatureFeelsLike]="city.main.feels_like"
         [description]="city.weather[0].description"
-        [icon]="getWeatherIconUrl(city.weather[0].icon)"
+        [icon]="city.weather[0].icon"
         (deleteCity)="receiveDeleteCity($event)"
         [routerLink]="['/', city.name]"
       ></app-weather-card>

@@ -19,21 +19,10 @@ export class MainComponent implements OnInit {
 
   weatherData: Weather[] = [];
 
-  weatherIconUrl: string = 'http://openweathermap.org/img/wn/';
-
-  getWeatherIconUrl(icon: string): string {
-    return this.weatherIconUrl + icon + '@2x.png';
-  }
-
-  roundTemperature(value: number): number {
-    return Math.round(value);
-  }
-
   ngOnInit(): void {
     this.weatherService.getWeather('Warsaw').subscribe(
       (data) => {
         this.weatherData?.push(data);
-        console.log(this.weatherData);
       },
       (error) => console.error(Error)
     );

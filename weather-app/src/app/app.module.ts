@@ -54,9 +54,18 @@ import { MainComponent } from './main/main.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { CityWeatherPageComponent } from './city-weather-page/city-weather-page.component';
+import { WeatherIconPipe } from './utils/pipes/weather-icon.pipe';
 
 @NgModule({
-  declarations: [AppComponent, TopNavComponent, MainComponent, WeatherCardComponent, FooterComponent, CityWeatherPageComponent],
+  declarations: [
+    AppComponent,
+    TopNavComponent,
+    MainComponent,
+    WeatherCardComponent,
+    FooterComponent,
+    CityWeatherPageComponent,
+    WeatherIconPipe,
+  ],
   imports: [
     RouterLink,
     FormsModule,
