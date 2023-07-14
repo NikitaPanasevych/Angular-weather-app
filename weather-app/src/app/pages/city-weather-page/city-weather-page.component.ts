@@ -14,6 +14,8 @@ export class CityWeatherPageComponent implements OnInit {
   cityForecastData!: WeatherForecast;
   weatherNow!: Weather;
 
+  
+
   constructor(
     private readonly route: ActivatedRoute,
     private forecastService: WeatherForecastService,
