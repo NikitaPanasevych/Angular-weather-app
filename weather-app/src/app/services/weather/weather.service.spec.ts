@@ -5,7 +5,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { environment } from 'src/environments/environment.prod';
-import { Weather } from '../models/weather.model';
+import { Weather } from '../../models/weather.model';
 
 describe('WeatherService', () => {
   let service: WeatherService;

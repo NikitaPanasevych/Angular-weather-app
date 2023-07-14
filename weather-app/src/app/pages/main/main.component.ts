@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Weather } from 'src/app/models/weather.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { WeatherService } from 'src/app/services/weather.service';
+import { WeatherService } from 'src/app/services/weather/weather.service';
 import { Observable, take } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { WeatherListState } from 'src/app/store/weather-list.state';

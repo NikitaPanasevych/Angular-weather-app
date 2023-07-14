@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
-$primary-color: #E91E63;
-$primary-text-color: #ffffff;
+$primary-color: #E91E63 ;
+$primary-text-color: #DAFFFB;
 
 $background-color: #45454D;
 
@@ -12,6 +14,7 @@ $large-text-size: 24px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Mukta', sans-serif;
 }
 
 
