@@ -17,6 +17,7 @@
         [temperatureFeelsLike]="city.main.feels_like"
         [description]="city.weather[0].description"
         [icon]="city.weather[0].icon"
+        [id]="city.id"
         (deleteCity)="receiveDeleteCity($event)"
         [routerLink]="['/', city.name]"
       ></app-weather-card>

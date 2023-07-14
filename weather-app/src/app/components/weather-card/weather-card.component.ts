@@ -11,14 +11,11 @@ export class WeatherCardComponent {
   @Input() description: string | undefined;
   @Input() temperatureFeelsLike: number | undefined;
   @Input() icon: string | undefined;
+  @Input() id: number | undefined;
 
-  @Output() deleteCity = new EventEmitter<string>();
-
-  roundTemperature(value: number): number {
-    return Math.round(value);
-  }
+  @Output() deleteCity = new EventEmitter<number>();
 
   delete() {
-    this.deleteCity.emit(this.cityName);
+    this.deleteCity.emit(this.id);
   }
 }

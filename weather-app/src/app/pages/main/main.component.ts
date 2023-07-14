@@ -1,8 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Weather } from '../models/weather.model';
-import { WeatherService } from '../weather.service';
+import { Weather } from 'src/app/models/weather.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { WeatherService } from 'src/app/services/weather.service';
+import { Observable, take } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { WeatherListState } from 'src/app/store/weather-list.state';
+import {
+  addToWeatherList,
+  removeFromWeatherList,
+} from 'src/app/store/weather-list.actions';
 
 @Component({
   selector: 'app-main',
@@ -12,20 +19,39 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class MainComponent implements OnInit {
   constructor(
     private weatherService: WeatherService,
-    private snackbar: MatSnackBar
-  ) {}
+    private snackbar: MatSnackBar,
+    private store: Store<WeatherListState>
+  ) {
+    this.weatherList$ = store.select('weatherList');
+  }
+
+  weatherList$: Observable<Weather[]>;
 
   @ViewChild('cityForm') cityForm?: NgForm;
 
   weatherData: Weather[] = [];
 
   ngOnInit(): void {
-    this.weatherService.getWeather('Warsaw').subscribe(
-      (data) => {
-        this.weatherData?.push(data);
-      },
-      (error) => console.error(Error)
-    );
+    this.weatherList$.subscribe((weatherList) => {
+      this.weatherData = weatherList;
+      console.log(this.weatherData);
+    });
+    if (this.weatherData.length == 0) {
+      this.weatherService.getWeather('Warsaw').subscribe(
+        (data) => {
+          this.addWeatherToList(data);
+        },
+        (error) => console.error(Error)
+      );
+    }
+  }
+
+  addWeatherToList(weather: Weather) {
+    this.store.dispatch(addToWeatherList({ weather }));
+  }
+
+  removeWeatherFromList(id: number) {
+    this.store.dispatch(removeFromWeatherList({ id }));
   }
 
   getWeatherData() {
@@ -37,7 +63,7 @@ export class MainComponent implements OnInit {
               duration: 2000,
             });
           } else {
-            this.weatherData?.push(data);
+            this.addWeatherToList(data);
             this.snackbar.open('City added', 'Close', {
               duration: 2000,
             });
@@ -56,9 +82,8 @@ export class MainComponent implements OnInit {
     }
   }
 
-  receiveDeleteCity($event: string) {
-    let deletedCity: string = $event;
-    this.weatherData = this.weatherData.filter((e) => e.name != deletedCity);
+  receiveDeleteCity($event: number) {
+    this.removeWeatherFromList($event);
     this.snackbar.open('City deleted', 'Close', {
       duration: 2000,
     });

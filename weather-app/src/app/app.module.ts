@@ -47,14 +47,18 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { MainComponent } from './main/main.component';
+import { MainComponent } from './pages/main/main.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { CityWeatherPageComponent } from './city-weather-page/city-weather-page.component';
-import { WeatherIconPipe } from './utils/pipes/weather-icon.pipe';
+import { CityWeatherPageComponent } from './pages/city-weather-page/city-weather-page.component';
+
+import { WeatherIconPipe } from './pipes/weather-icon.pipe';
+
+import { StoreModule } from '@ngrx/store';
+import { weatherListReducer } from './store/weather-list.reducer';
 
 @NgModule({
   declarations: [
@@ -67,6 +71,8 @@ import { WeatherIconPipe } from './utils/pipes/weather-icon.pipe';
     WeatherIconPipe,
   ],
   imports: [
+    BrowserModule,
+    StoreModule.forRoot({ weatherList: weatherListReducer }),
     RouterLink,
     FormsModule,
     ReactiveFormsModule,
