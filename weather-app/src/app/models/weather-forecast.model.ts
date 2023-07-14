@@ -31,7 +31,7 @@ export interface List {
   visibility: number;
   pop: number;
   sys: Sys;
-  dt_txt: Date;
+  dt_txt: string;
   rain?: Rain;
 }
 
@@ -56,36 +56,15 @@ export interface Rain {
 }
 
 export interface Sys {
-  pod: Pod;
-}
-
-export enum Pod {
-  D = 'd',
-  N = 'n',
+  pod: string;
 }
 
 export interface Weather {
   id: number;
-  main: MainEnum;
-  description: Description;
+  main: string;
+  description: string;
   icon: string;
 }
-
-export enum Description {
-  BrokenClouds = 'broken clouds',
-  ClearSky = 'clear sky',
-  FewClouds = 'few clouds',
-  LightRain = 'light rain',
-  OvercastClouds = 'overcast clouds',
-  ScatteredClouds = 'scattered clouds',
-}
-
-export enum MainEnum {
-  Clear = 'Clear',
-  Clouds = 'Clouds',
-  Rain = 'Rain',
-}
-
 export interface Wind {
   speed: number;
   deg: number;
