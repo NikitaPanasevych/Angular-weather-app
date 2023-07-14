@@ -1,3 +1,11 @@
-<div class="main-body">
-  <h1 class="header">{{ cityForecastData.city.name }}</h1>
+<div class="main">
+  <div class="main__container">
+    <div>
+      <h1 class="header">{{ weatherNow.name }}</h1>
+      <p>{{ weatherNow.weather[0].description }}</p>
+      <p>{{ weatherNow.main.temp | number : "1.0-0" }}°C</p>
+      <p>Feels like {{ weatherNow.main.feels_like | number : "1.0-0" }}°C</p>
+    </div>
+    <div></div>
+  </div>
 </div>

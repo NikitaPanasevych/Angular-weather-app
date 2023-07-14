@@ -1,0 +1,17 @@
+@import '../../../styles.scss';
+
+.main{
+    padding: 5rem;
+    background: $background-color;
+    color: $primary-text-color;
+    display: grid;
+    grid-template-columns:  1fr ;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+    "input-form"
+    "main";
+    gap: 3rem;
+    overflow: x-scroll;
+    min-height: 100vh;
+    justify-content: center;
+}

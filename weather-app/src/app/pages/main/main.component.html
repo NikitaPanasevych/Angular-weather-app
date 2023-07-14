@@ -12,6 +12,7 @@
     <div class="cards-container">
       <app-weather-card
         *ngFor="let city of weatherData"
+        [cardColor]="city.weather[0].description"
         [cityName]="city.name"
         [temperature]="city.main.temp"
         [temperatureFeelsLike]="city.main.feels_like"

@@ -59,6 +59,7 @@ import { WeatherIconPipe } from './pipes/weather-icon.pipe';
 
 import { StoreModule } from '@ngrx/store';
 import { weatherListReducer } from './store/weather-list.reducer';
+import { CardColorDirective } from './directives/card-color.directive';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { weatherListReducer } from './store/weather-list.reducer';
     FooterComponent,
     CityWeatherPageComponent,
     WeatherIconPipe,
+    CardColorDirective,
   ],
   imports: [
     BrowserModule,
