@@ -1,8 +1,7 @@
 <app-top-nav></app-top-nav>
 
 <div [@routeAnimations]="getAnimationData(routerOutlet)">
-    <router-outlet #routerOutlet="outlet"></router-outlet>
+  <router-outlet #routerOutlet="outlet"></router-outlet>
 </div>
-
+<app-weather-chart></app-weather-chart>
 <app-footer></app-footer>
-

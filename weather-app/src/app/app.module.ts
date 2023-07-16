@@ -61,6 +61,7 @@ import { StoreModule } from '@ngrx/store';
 import { weatherListReducer } from './store/weather-list.reducer';
 import { CardColorDirective } from './directives/card-color/card-color.directive';
 import { PageBackgroundDirective } from './directives/page-background/page-background.directive';
+import { WeatherChartComponent } from './components/weather-chart/weather-chart.component';
 
 
 
@@ -74,7 +75,8 @@ import { PageBackgroundDirective } from './directives/page-background/page-backg
     CityWeatherPageComponent,
     WeatherIconPipe,
     CardColorDirective,
-    PageBackgroundDirective
+    PageBackgroundDirective,
+    WeatherChartComponent
   ],
   imports: [
     BrowserModule,
