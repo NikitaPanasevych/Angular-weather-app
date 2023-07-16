@@ -24,7 +24,7 @@ export class PageBackgroundDirective {
         break;
       case '02d': // few clouds
         this.color = '#232946';
-        this.colorBG = '#d4d8f0';
+        this.colorBG = '#d8eefe';
         break;
       case '03d': // scattered clouds
         this.color = '#232946';
@@ -32,7 +32,7 @@ export class PageBackgroundDirective {
         break;
       case '04d': // broken clouds
         this.color = '#232946';
-        this.colorBG = '#eff0f3';
+        this.colorBG = '#d4d8f0';
         break;
       case '09d': // shower rain
         this.color = '#0e172c';
@@ -53,7 +53,7 @@ export class PageBackgroundDirective {
       //night
       default:
         this.color = '#b8c1ec';
-        this.colorBG = '#232946';
+        this.colorBG = '#d8eefe';
         break;
     }
     this.element.nativeElement.style.backgroundColor = this.colorBG;
