@@ -34,7 +34,6 @@ export class MainComponent implements OnInit {
   ngOnInit(): void {
     this.weatherList$.subscribe((weatherList) => {
       this.weatherData = weatherList;
-      console.log(this.weatherData);
     });
     if (this.weatherData.length == 0) {
       this.weatherService.getWeather('Warsaw').subscribe(

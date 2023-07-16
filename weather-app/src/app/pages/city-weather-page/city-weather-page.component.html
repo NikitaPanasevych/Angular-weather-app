@@ -1,4 +1,4 @@
-<div appPageBackground class="main">
+<div [appPageBackground]="weatherNow.weather[0].icon" class="main">
   <div class="main__container">
     <div>
       <h1 class="header">{{ weatherNow.name }}</h1>

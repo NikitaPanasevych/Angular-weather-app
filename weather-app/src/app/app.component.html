@@ -1,8 +1,8 @@
 <app-top-nav></app-top-nav>
 
-<router-outlet>
-    
-</router-outlet>
+<div [@routeAnimations]="getAnimationData(routerOutlet)">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
 
 <app-footer></app-footer>
 

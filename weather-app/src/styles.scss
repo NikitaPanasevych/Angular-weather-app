@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
 
 /* You can add global styles to this file, and also import other style files */
-$primary-color: #E91E63 ;
-$primary-text-color: #DAFFFB;
+$primary-color: #7f5af0 ;
+$primary-text-color: #fffffe;
 
-$background-color: #45454D;
+$background-color: #242629;
+$background-color-dark: #16161a;
 
 $small-text-size: 16px;
 $medium-text-size: 20px;
@@ -17,7 +18,9 @@ $large-text-size: 24px;
   font-family: 'Mukta', sans-serif;
 }
 
-
+.material-icons{
+  font-family: 'Material Icons' !important;
+}
 
 html, body { height: 100%; }
 body { 

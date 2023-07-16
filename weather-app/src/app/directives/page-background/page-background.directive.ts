@@ -1,12 +1,14 @@
-import { Directive, ElementRef, HostBinding, Input } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[appPageBackground]',
 })
 export class PageBackgroundDirective {
 
-  colorBG: string = '#fffffe';
-  color: string = '#272343';
+  @Input() appPageBackground!: string;
+
+  colorBG: string = '';
+  color: string = '';
 
   constructor(private element: ElementRef) {}
 
@@ -15,7 +17,7 @@ export class PageBackgroundDirective {
   }
 
   private setPageColor() {
-    /*switch (this.icon) {
+    switch (this.appPageBackground) {
       case '01d': // clear sky done
         this.color = '#272343';
         this.colorBG = '#fffffe';
@@ -53,7 +55,7 @@ export class PageBackgroundDirective {
         this.color = '#b8c1ec';
         this.colorBG = '#232946';
         break;
-    }*/
+    }
     this.element.nativeElement.style.backgroundColor = this.colorBG;
     this.element.nativeElement.style.color = this.color;
   }
