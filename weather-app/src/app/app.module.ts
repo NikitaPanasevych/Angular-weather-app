@@ -62,6 +62,7 @@ import { weatherListReducer } from './store/weather-list.reducer';
 import { CardColorDirective } from './directives/card-color/card-color.directive';
 import { PageBackgroundDirective } from './directives/page-background/page-background.directive';
 import { WeatherChartComponent } from './components/weather-chart/weather-chart.component';
+import { WeatherForecastCardComponent } from './components/weather-forecast-card/weather-forecast-card.component';
 
 
 
@@ -76,7 +77,8 @@ import { WeatherChartComponent } from './components/weather-chart/weather-chart.
     WeatherIconPipe,
     CardColorDirective,
     PageBackgroundDirective,
-    WeatherChartComponent
+    WeatherChartComponent,
+    WeatherForecastCardComponent
   ],
   imports: [
     BrowserModule,

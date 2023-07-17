@@ -4,7 +4,6 @@ import { Directive, ElementRef, Input } from '@angular/core';
   selector: '[appPageBackground]',
 })
 export class PageBackgroundDirective {
-
   @Input() appPageBackground!: string;
 
   colorBG: string = '';
@@ -52,8 +51,8 @@ export class PageBackgroundDirective {
         break;
       //night
       default:
-        this.color = '#b8c1ec';
-        this.colorBG = '#d8eefe';
+        this.color = '#fffffe';
+        this.colorBG = '#232946';
         break;
     }
     this.element.nativeElement.style.backgroundColor = this.colorBG;
