@@ -47,6 +47,25 @@
     .chart-container{
         padding: 0 15rem;
         margin-top: 5rem;
-        
+    }
+    .forecast{
+        margin-top: 5rem;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        height: 300px;
+        border-radius: 5px;
+        background-color: inherit;
+        text-align: center;
+        h1{
+            font-size: 1.5rem;
+            margin: 1rem;
+        }
+        &__container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 0 4rem;
+            overflow-x: scroll;
+        }
     }
 }

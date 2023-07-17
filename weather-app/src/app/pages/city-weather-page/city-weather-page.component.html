@@ -24,7 +24,17 @@
       <p>Wind speed {{ weatherNow.wind.speed }} km/h</p>
     </div>
   </div>
-  <div class="forecast-container"></div>
+  <div class="forecast">
+    <h1>3 hour weather forecast for 5 days</h1>
+    <div class="forecast__container">
+      <weather-forecast-card
+        *ngFor="let card of cityForecastData.list"
+        [temperature]="card.main.temp"
+        [icon]="card.weather[0].icon"
+        [date]="card.dt_txt"
+      />
+    </div>
+  </div>
   <div class="chart-container">
     <app-weather-chart />
   </div>

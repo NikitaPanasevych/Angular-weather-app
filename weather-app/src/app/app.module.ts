@@ -55,7 +55,7 @@ import { WeatherCardComponent } from './components/weather-card/weather-card.com
 import { FooterComponent } from './layout/footer/footer.component';
 import { CityWeatherPageComponent } from './pages/city-weather-page/city-weather-page.component';
 
-import { WeatherIconPipe } from './pipes/weather-icon.pipe';
+import { WeatherIconPipe } from './pipes/weather-icon/weather-icon.pipe';
 
 import { StoreModule } from '@ngrx/store';
 import { weatherListReducer } from './store/weather-list.reducer';

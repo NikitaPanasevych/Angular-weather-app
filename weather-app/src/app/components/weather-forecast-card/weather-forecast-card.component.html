@@ -1,1 +1,7 @@
-<p>weather-forecast-card works!</p>
+<div class="weather-forecast-card" [appPageBackground]="icon">
+  <span>{{ date | date : "shortTime" }}</span>
+  <div class="weather-forecast-card__icon">
+    <img src="{{ icon | weatherIconPipe }}" alt="weather icon" />
+  </div>
+  <span>{{ temperature | number : "1.0-0" }} °C</span>
+</div>
