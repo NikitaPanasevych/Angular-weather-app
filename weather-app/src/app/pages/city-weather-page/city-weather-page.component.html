@@ -1,13 +1,20 @@
 <div [appPageBackground]="weatherNow.weather[0].icon" class="main">
   <div class="heading">
-    <h1 class="">{{ weatherNow.name }}</h1>
-    <button mat-raised-button color="accent" routerLink="/">Go back</button>
+    <h1 class="">
+      {{ weatherNow.name }}
+    </h1>
+    <p class="date">
+      <img
+        src="{{ weatherNow.weather[0].icon | weatherIconPipe }}"
+        alt="weather icon"
+      />
+    </p>
   </div>
 
   <div class="main__container">
     <div class="info">
-      <p>{{ weatherNow.weather[0].description }}</p>
       <p>{{ weatherNow.main.temp | number : "1.0-0" }}°C</p>
+      <p>{{ weatherNow.weather[0].description }}</p>
       <p>Feels like {{ weatherNow.main.feels_like | number : "1.0-0" }}°C</p>
     </div>
     <div class="image-container">
@@ -17,9 +24,9 @@
       />
     </div>
     <div class="additional-info">
-      <p>Humidity: {{ weatherNow.main.humidity }}</p>
+      <p>Humidity: {{ weatherNow.main.humidity }} %</p>
       <p>Pressure: {{ weatherNow.main.pressure }} hPa</p>
-      <p>Wind speed {{ weatherNow.wind.speed }} km/h</p>
+      <p>Wind speed: {{ weatherNow.wind.speed }} km/h</p>
     </div>
   </div>
   <div class="forecast">

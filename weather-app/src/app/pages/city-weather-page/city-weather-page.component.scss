@@ -1,71 +1,148 @@
 @import '../../../styles.scss';
 
 .main{
-    padding: 5rem;
+    padding: 2rem 5rem;
     background: $background-color;
     color: $primary-text-color;
     overflow: x-scroll;
     min-height: 100vh;
     font-size: 1.75rem;
     .heading{
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5rem;
+        margin: 2rem;
         padding: 0 5rem;
         h1{
             font-size: 2.5rem;
             font-weight: 600;
-        }        
+        }
+        img{
+            display: none
+        }
     }
     &__container{
-        display: flex;
-        justify-content: space-between;
-        padding: 0 10rem;
+
+        padding: 2.5rem;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        gap: 1.25rem;
+        grid-template-areas: 
+        'left icon right'
+        ;
         .info{
+            grid-area: left;
+            margin: auto;
             h1{
                 font-size: 2.5rem;
-                margin-bottom: 2.5rem;
+                margin: 2.5rem;
             }
-            
             display: grid;
             gap: 1.25rem;
         }
         .image-container{
             height: 150px;
             width: 150px;
+            grid-area: icon;
+            margin: auto;
             img{
+                display: block;
                 width: 100%;
-                height: 100%;
+                height: auto;
             }
-            
+
         }
         .additional-info{
+            grid-area: right;
+            margin: auto;
             display: grid;
             gap: 1.25rem;
+            p{
+                margin: 0;
+            }
         }
     }
     .chart-container{
         padding: 0 15rem;
         margin-top: 5rem;
     }
+
     .forecast{
         margin-top: 5rem;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         height: 300px;
-        border-radius: 5px;
-        background-color: inherit;
-        text-align: center;
+        border-radius: 20px;
+        padding: 2rem;
+        background-color: $background-color;
         h1{
             font-size: 1.5rem;
-            margin: 1rem;
+            text-align: center;
+            color: $primary-text-color;
         }
         &__container{
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: 1.25rem;
-            padding: 0 4rem;
             overflow-x: hidden;
+        }
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        padding: 1rem;
+        min-height: 100vh;
+        .heading{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+            margin: 0.25rem;
+            h1{
+                font-size: 1.5rem;
+            }
+            img{
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+        &__container{
+            background-color: $background-color;
+        color: $primary-text-color;
+            padding: 2.5rem;
+            font-size: $medium-text-size;
+            .image-container{
+                height: 100px;
+                width: 100px;
+            }
+        }
+        .forecast{
+            margin-top: 2rem;
+            padding: 1rem;
+            height: auto;
+            background-color: $background-color;
+        color: $primary-text-color;
+            h1{
+                font-size: 1rem;
+            }
+            &__container{
+                overflow-x: scroll;
+                gap: 0.5rem;
+                padding: 0;
+            }
+        }
+
+        .chart-container{
+            padding: 0 1rem;
+            margin-top: 2rem;
+            border-radius: 20px;
+            width: 100%;
+            height: auto;
+            background-color: $background-color;
+            color: $primary-text-color;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
         }
     }
 }

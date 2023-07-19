@@ -34,7 +34,7 @@ export class WeatherChartComponent implements OnInit {
           title: {
             display: true,
             text: 'Weather forecast chart',
-            color: '#f25042',
+            color: '#fffffe',
             font: {
               size: 20,
             },
@@ -46,7 +46,7 @@ export class WeatherChartComponent implements OnInit {
         scales: {
           x: {
             ticks: {
-              color: '#f25042',
+              color: '#fffffe',
               font: {
                 size: 14,
                 weight: 'bold',
@@ -55,7 +55,7 @@ export class WeatherChartComponent implements OnInit {
           },
           y: {
             ticks: {
-              color: '#f25042',
+              color: '#fffffe',
               font: {
                 size: 14,
                 weight: 'bold',
@@ -72,8 +72,8 @@ export class WeatherChartComponent implements OnInit {
           {
             label: 'Temperature',
             data: data.list.map((item) => item.main.temp),
-            borderColor: '#f25042',
-            backgroundColor: '#f25042',
+            borderColor: '#fffffe',
+            backgroundColor: '#fffffe',
           },
         ],
       },
