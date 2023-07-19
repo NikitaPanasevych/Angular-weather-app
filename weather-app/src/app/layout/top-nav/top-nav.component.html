@@ -1,4 +1,25 @@
-<div class="top-nav">
-    <p class="">Welcome to AWeather!</p>
-</div>
-
+<nav class="top-nav">
+  <div class="top-nav__container">
+    <span class="">NGWeather</span>
+    <button
+      mat-icon-button
+      class="top-nav__container__search"
+      (click)="toggleDropdown()"
+    >
+      <mat-icon> search </mat-icon>
+    </button>
+  </div>
+  <div
+    class="top-nav__input"
+    [@dropdown]="isDropdownOpen ? 'visible' : 'hidden'"
+    *ngIf="isDropdownOpen"
+  >
+    <mat-form-field color="accent" class="input-field">
+      <mat-label>Where is the best weather?</mat-label>
+      <input ngModel name="city" matInput placeholder="Type a city" />
+    </mat-form-field>
+    <button mat-icon-button>
+      <mat-icon> add </mat-icon>
+    </button>
+  </div>
+</nav>

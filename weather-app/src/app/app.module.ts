@@ -52,19 +52,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { MainComponent } from './pages/main/main.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
-import { FooterComponent } from './layout/footer/footer.component';
 import { CityWeatherPageComponent } from './pages/city-weather-page/city-weather-page.component';
 
 import { WeatherIconPipe } from './pipes/weather-icon/weather-icon.pipe';
 
 import { StoreModule } from '@ngrx/store';
 import { weatherListReducer } from './store/weather-list.reducer';
-import { CardColorDirective } from './directives/card-color/card-color.directive';
 import { PageBackgroundDirective } from './directives/page-background/page-background.directive';
 import { WeatherChartComponent } from './components/weather-chart/weather-chart.component';
 import { WeatherForecastCardComponent } from './components/weather-forecast-card/weather-forecast-card.component';
-
-
 
 @NgModule({
   declarations: [
@@ -72,13 +68,11 @@ import { WeatherForecastCardComponent } from './components/weather-forecast-card
     TopNavComponent,
     MainComponent,
     WeatherCardComponent,
-    FooterComponent,
     CityWeatherPageComponent,
     WeatherIconPipe,
-    CardColorDirective,
     PageBackgroundDirective,
     WeatherChartComponent,
-    WeatherForecastCardComponent
+    WeatherForecastCardComponent,
   ],
   imports: [
     BrowserModule,

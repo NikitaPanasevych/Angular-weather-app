@@ -1,9 +1,7 @@
 <div [appPageBackground]="weatherNow.weather[0].icon" class="main">
   <div class="heading">
     <h1 class="">{{ weatherNow.name }}</h1>
-    <button mat-raised-button color="accent" [routerLink]="['/']">
-      Go back
-    </button>
+    <button mat-raised-button color="accent" routerLink="/">Go back</button>
   </div>
 
   <div class="main__container">
@@ -25,10 +23,10 @@
     </div>
   </div>
   <div class="forecast">
-    <h1>3 hour weather forecast for 5 days</h1>
+    <h1>3 hour weather forecast</h1>
     <div class="forecast__container">
       <weather-forecast-card
-        *ngFor="let card of cityForecastData.list"
+        *ngFor="let card of cityForecastData.list.slice(0, 8)"
         [temperature]="card.main.temp"
         [icon]="card.weather[0].icon"
         [date]="card.dt_txt"

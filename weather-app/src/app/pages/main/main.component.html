@@ -1,5 +1,9 @@
 <div class="main">
-  <form class="input-form" #cityForm="ngForm" (ngSubmit)="getWeatherData()">
+  <form
+    class="main__input-form"
+    #cityForm="ngForm"
+    (ngSubmit)="getWeatherData()"
+  >
     <mat-form-field color="accent" class="input-field">
       <mat-label>Where is the best weather?</mat-label>
       <input ngModel name="city" matInput placeholder="Type a city" />
@@ -7,9 +11,8 @@
     <button mat-raised-button type="submit">Search</button>
   </form>
 
-  <div class="main-body">
-    <h1 class="header">Weather around the world!</h1>
-    <div class="cards-container">
+  <div class="main__body">
+    <div class="main__body__container">
       <app-weather-card
         *ngFor="let city of weatherData"
         [cityName]="city.name"

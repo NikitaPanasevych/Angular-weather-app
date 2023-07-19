@@ -11,12 +11,15 @@ $small-text-size: 16px;
 $medium-text-size: 20px;
 $large-text-size: 24px;
 
+$mobile-breakpoint: 600px;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Mukta', sans-serif;
 }
+
 
 .material-icons{
   font-family: 'Material Icons' !important;

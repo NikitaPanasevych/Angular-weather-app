@@ -1,9 +1,7 @@
-<div class="weather-card" [cardColor]="icon" [@fadeInOut]>
+<div class="weather-card" [appPageBackground]="icon" [@fadeInOut]>
   <h3 class="weather-card__city">{{ cityName }}</h3>
-  <p class="weather-card__temp">
-    temperature: {{ temperature | number : "1.0-0" }}°C
-  </p>
-  <p class="weather-card__temp">
+  <p class="weather-card__temp">{{ temperature | number : "1.0-0" }}°C</p>
+  <p class="weather-card__temp-feels-like">
     feels like: {{ temperatureFeelsLike | number : "1.0-0" }}°C
   </p>
   <img
@@ -13,6 +11,6 @@
   />
   <p class="weather-card__description">{{ description }}</p>
   <button (click)="delete()" mat-button class="weather-card__delete-button">
-    <mat-icon>delete</mat-icon>
+    <mat-icon>highlight_off</mat-icon>
   </button>
 </div>

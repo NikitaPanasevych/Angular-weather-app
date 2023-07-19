@@ -1,7 +1,7 @@
 @import '../../../styles.scss';
 
 .top-nav{
-    background-color: $primary-color;
+    background-color: $background-color;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
     height: 60px;
     width: 100%;
@@ -12,7 +12,45 @@
     z-index: 1;
     color: $primary-text-color;
     font-size: $large-text-size;
-    p{
+    span{
         margin: 0;
+        font-size: $large-text-size;
+        font-weight: 600;
+    }
+    &__container__search{
+        display: none;
+    }
+    &__container__input{
+        display: none;
+        
+    }
+    @media screen and (max-width: $mobile-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        &__container{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            &__search{
+                display: block;
+            }
+        }
+        &__input{
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            .input-field{
+                width: 100%;
+            }
+            button{
+            position: absolute;
+            right: 1rem;
+            
+            }
+        }
     }
 }

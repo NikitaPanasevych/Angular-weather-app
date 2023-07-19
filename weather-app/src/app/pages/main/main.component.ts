@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Weather } from 'src/app/models/weather.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { WeatherService } from 'src/app/services/weather/weather.service';
-import { Observable, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { WeatherListState } from 'src/app/store/weather-list.state';
 import {
@@ -17,6 +17,8 @@ import {
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
+  @ViewChild('cityForm') cityForm?: NgForm;
+
   constructor(
     private weatherService: WeatherService,
     private snackbar: MatSnackBar,
@@ -26,9 +28,6 @@ export class MainComponent implements OnInit {
   }
 
   weatherList$: Observable<Weather[]>;
-
-  @ViewChild('cityForm') cityForm?: NgForm;
-
   weatherData: Weather[] = [];
 
   ngOnInit(): void {

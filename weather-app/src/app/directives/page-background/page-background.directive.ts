@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input } from '@angular/core';
   selector: '[appPageBackground]',
 })
 export class PageBackgroundDirective {
-  @Input() appPageBackground!: string;
+  @Input() appPageBackground!: string | undefined;
 
   colorBG: string = '';
   color: string = '';

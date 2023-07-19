@@ -10,43 +10,67 @@
     grid-template-areas: 
     "input-form"
     "main";
-    gap: 3rem;
+    gap: 5rem;
     overflow: x-scroll;
     min-height: 100vh;
     justify-content: center;
-}
 
-.input-form{
-    grid-area: input-form;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    button{
-        padding: 0.5rem 1rem;
-        background-color: $primary-color;
+    &__input-form{
+        grid-area: input-form;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        button{
+            padding: 0.5rem 1rem;
+            background-color: $primary-text-color;
+            color: $background-color;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        .input-field{
+            width: 300px;
+        }
     }
+
+    &__body{
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        &__container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 0;
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $mobile-breakpoint){
+        padding: 1rem;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'main';
+        &__input-form{
+            display: none;
+        }
+    }
+        
 }
 
-.main-body{
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
 
 
-.input-field{
-    width: 300px;
-}
 
-.cards-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0;
-    width: 100%;
-}
+
+
+
+
+
 
