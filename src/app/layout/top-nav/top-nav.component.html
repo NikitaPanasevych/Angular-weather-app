@@ -5,6 +5,7 @@
       mat-icon-button
       class="top-nav__container__search"
       (click)="toggleDropdown()"
+      *ngIf="showSearch"
     >
       <mat-icon> search </mat-icon>
     </button>

@@ -1,6 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { dropdown } from 'src/app/animations/dropdown';
@@ -15,12 +16,13 @@ import { WeatherListState } from 'src/app/store/weather-list.state';
   styleUrls: ['./top-nav.component.scss'],
   animations: [dropdown],
 })
-export class TopNavComponent {
+export class TopNavComponent implements OnInit {
 
   constructor(
     private weatherService: WeatherService,
     private snackbar: MatSnackBar,
-    private store: Store<WeatherListState>
+    private store: Store<WeatherListState>,
+    private route: ActivatedRoute
   ) {
     this.weatherList$ = store.select('weatherList');
   }
@@ -30,6 +32,13 @@ export class TopNavComponent {
   weatherList$: Observable<Weather[]>;
   weatherData: Weather[] = [];
   isDropdownOpen = false;
+  showSearch = true;
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      params['city'] ? (this.showSearch = false) : (this.showSearch = true);
+    });
+  }
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;

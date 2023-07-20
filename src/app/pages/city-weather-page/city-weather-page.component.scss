@@ -19,7 +19,6 @@
         }
     }
     &__container{
-
         padding: 2.5rem;
         border-radius: 20px;
         display: grid;
@@ -62,8 +61,14 @@
         }
     }
     .chart-container{
-        padding: 0 15rem;
+        padding: 5rem 15rem;
         margin-top: 5rem;
+        margin-bottom: 5rem;
+        border-radius: 20px;
+            width: 100%;
+            height: auto;
+            background-color: $background-color;
+            color: $primary-text-color;
     }
 
     .forecast{
@@ -71,7 +76,7 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         height: 300px;
         border-radius: 20px;
-        padding: 2rem;
+        padding: 1rem 2rem 0 2rem;
         background-color: $background-color;
         h1{
             font-size: 1.5rem;
@@ -107,10 +112,12 @@
         }
         &__container{
             background-color: $background-color;
-        color: $primary-text-color;
+            color: $primary-text-color;
             padding: 2.5rem;
             font-size: $medium-text-size;
+            grid-template-columns: auto auto;
             .image-container{
+                display: none;
                 height: 100px;
                 width: 100px;
             }
