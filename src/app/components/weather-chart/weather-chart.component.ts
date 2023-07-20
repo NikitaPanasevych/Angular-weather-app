@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Chart } from 'chart.js';
-import 'chart.js/auto';
+import { ActivatedRoute } from '@angular/router';
+import  Chart  from 'chart.js/auto';
 import { WeatherForecast } from 'src/app/models/weather-forecast.model';
 import { WeatherForecastService } from 'src/app/services/weather-forecast/weather-forecast.service';
 

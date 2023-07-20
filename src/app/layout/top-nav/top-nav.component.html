@@ -9,10 +9,12 @@
       <mat-icon> search </mat-icon>
     </button>
   </div>
-  <div
+  <form
     class="top-nav__input"
     [@dropdown]="isDropdownOpen ? 'visible' : 'hidden'"
     *ngIf="isDropdownOpen"
+    #cityForm="ngForm"
+    (ngSubmit)="getWeatherData()"
   >
     <mat-form-field color="accent" class="input-field">
       <mat-label>Where is the best weather?</mat-label>
@@ -21,5 +23,5 @@
     <button mat-icon-button>
       <mat-icon> add </mat-icon>
     </button>
-  </div>
+  </form>
 </nav>
