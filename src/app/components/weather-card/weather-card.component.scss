@@ -99,11 +99,17 @@
             margin: auto;
         }
         &__delete-button{
+            width: 30px;
+            height: 30px;
             position: relative;
             grid-area: temp;
             transform: translate(105%, -45%);
             width: 30px;
             height: 30px;
+            &:hover{
+                transform: translate(105%, -45%) scale(1.05);
+            }
+
         }
         &__temp-feels-like{
             display: none;

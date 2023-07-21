@@ -38,6 +38,9 @@ export class TopNavComponent implements OnInit {
     this.route.params.subscribe((params) => {
       params['city'] ? (this.showSearch = false) : (this.showSearch = true);
     });
+    this.weatherList$.subscribe((weatherList) => {
+      this.weatherData = weatherList;
+    });
   }
 
   toggleDropdown() {
