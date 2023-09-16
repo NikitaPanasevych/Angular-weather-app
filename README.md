@@ -1,5 +1,7 @@
 # WeatherApp
 
+Weather app built with Angular. You can check weather forecast for chosen cities
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
 ## Development server
